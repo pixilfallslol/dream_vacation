@@ -11,3 +11,13 @@ with sync_playwright() as p:
 
     page.goto("https://www.kayak.com/flights")
     random_sleep()
+    
+    x_button = page.locator(".c_neb-item-button")
+    x_button.click()
+    flying_from = page.locator("input[placeholder='From?']")
+    time.sleep(.1)
+    flying_from.fill("LAX")
+    time.sleep(1)
+    flying_from.press("Enter")
+    
+    time.sleep(3)
